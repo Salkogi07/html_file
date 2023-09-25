@@ -1,0 +1,61 @@
+<html>
+    <script>
+        var a = 0;
+        var s = [];
+        var pass = 0;
+        var password = [];
+        function lock(input){
+            if(a < 4){
+                s = s + input;
+                a++;
+                document.getElementById("text2").value = s;
+            }
+        }
+        function on(){
+            if(s == "1234"){
+                document.getElementById("img1").src = "images/open.png"
+                document.getElementById("text1").value = "열림";
+            }
+            else{
+                document.getElementById("img1").src = "images/close.png"
+                document.getElementById("text1").value = "닫힘";
+            }
+        }
+        function set(){
+            a = 0;
+            s = "";
+            document.getElementById("img1").src = "images/close.png"
+            document.getElementById("text2").value = "";
+            document.getElementById("text1").value = "닫힘";
+        }
+        function password_set(){
+            pass++;
+            if(pass == 2){
+                pass = 0;
+            }
+        }
+    </script>
+    <title>잠금장치</title>
+    <body>
+        <head>네이버</head><br>
+        <a href="https://naver.com"><img src="images/naver.png" width="200" height="200"></a><br><br>
+        <head>잠금장치</head><br>
+        <img id="img1" src="images/close.png" width="200" height="200" alt="image no found"><br><br>
+        <h>기본 비밀번호는 1234입니다</h><br>
+        <input id="text1" type="text" value="닫힘"><br>
+        <input id="text2" type="text" value=""><br><br>
+        <input id="button1" type="button" value="1" onclick="lock(1)">
+        <input id="button2" type="button" value="2" onclick="lock(2)">
+        <input id="button3" type="button" value="3" onclick="lock(3)"><br>
+        <input id="button4" type="button" value="4" onclick="lock(4)">
+        <input id="button5" type="button" value="5" onclick="lock(5)">
+        <input id="button6" type="button" value="6" onclick="lock(6)"><br>
+        <input id="button7" type="button" value="7" onclick="lock(7)">
+        <input id="button8" type="button" value="8" onclick="lock(8)">
+        <input id="button9" type="button" value="9" onclick="lock(9)"><br>
+        <input id="button9" type="button" value="L" onclick="on()">
+        <input id="button9" type="button" value="0" onclick="lock(0)">
+        <input id="button9" type="button" value="R" onclick="set()"><br><br>
+        <button id="img-btn" type="button" onclick="password_set()"><img src="images/pass.png" width="50" height="50" alt="image no found"></button>
+    </body>
+</html>
